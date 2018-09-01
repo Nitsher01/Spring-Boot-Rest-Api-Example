@@ -13,7 +13,7 @@ public class Worker extends Thread {
 		try {
 			while(true) {
 				HttpURLConnection urlConnection = (HttpURLConnection) new URL("https://protected-sands-59177.herokuapp.com/hello").openConnection();
-				Worker.sleep(840000);
+				Worker.sleep(840000);//840000
 				System.out.println("Woke Up");
 			}
 		} catch (IOException e) {

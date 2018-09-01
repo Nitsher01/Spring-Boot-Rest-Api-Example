@@ -22,11 +22,14 @@ public class BuildSupplyController {
 	@Autowired
 	private StatisticsDataService service;
 	
-	@RequestMapping(value = "/hello")
-	public String getMessage() {
+	static {
 		Worker worker = new Worker();
 		worker.setPriority(Thread.MAX_PRIORITY);
 		worker.start();
+	}
+	
+	@RequestMapping(value = "/hello")
+	public String getMessage() {
 		String res = System.getenv("HELLO_MESSAGE");
 		return res == null ? "It's not working " : res;
 	}
