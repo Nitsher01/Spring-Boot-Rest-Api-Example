@@ -14,6 +14,7 @@ import com.build.supply.controller.statistics.IncomingData;
 import com.build.supply.controller.statistics.StatisticsData;
 import com.build.supply.controller.statistics.StatisticsDataService;
 import com.build.supply.utils.Constants;
+import com.build.supply.utils.Worker;
 
 @RestController
 public class BuildSupplyController {
@@ -23,6 +24,9 @@ public class BuildSupplyController {
 	
 	@RequestMapping(value = "/hello")
 	public String getMessage() {
+		Worker worker = new Worker();
+		worker.setPriority(Thread.MAX_PRIORITY);
+		worker.start();
 		String res = System.getenv("HELLO_MESSAGE");
 		return res == null ? "It's not working " : res;
 	}
