@@ -22,6 +22,11 @@ public class BuildSupplyController {
 	private StatisticsDataService service;
 	
 	@RequestMapping(value = "/statistics")
+	public String getMessage() {
+		return "Hello, it's working";
+	}
+	
+	@RequestMapping(value = "/statistics")
 	public StatisticsData getStats() {
 		return service.getStatistics();
 	}
