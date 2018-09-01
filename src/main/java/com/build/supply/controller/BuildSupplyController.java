@@ -23,7 +23,8 @@ public class BuildSupplyController {
 	
 	@RequestMapping(value = "/hello")
 	public String getMessage() {
-		return "Hello, it's working";
+		String res = System.getenv("HELLO_MESSAGE");
+		return res == null ? "It's not working " : res;
 	}
 	
 	@RequestMapping(value = "/statistics")
