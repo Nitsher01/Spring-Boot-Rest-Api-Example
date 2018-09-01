@@ -21,7 +21,7 @@ public class BuildSupplyController {
 	@Autowired
 	private StatisticsDataService service;
 	
-	@RequestMapping(value = "/statistics")
+	@RequestMapping(value = "/hello")
 	public String getMessage() {
 		return "Hello, it's working";
 	}
